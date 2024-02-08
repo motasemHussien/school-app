@@ -1,0 +1,24 @@
+<!-- <mat-dialog-content>
+  <p>{{ data.firstName }}</p>
+</mat-dialog-content> -->
+<mat-dialog-content>
+  <div class="student-details">
+    <img [src]="data.image" alt="Student Image" class="student-image" />
+    <div class="student-info">
+      <p><strong>Name:</strong> {{ data.firstName }} {{ data.lastName }}</p>
+      <p><strong>Class:</strong> {{ data.class }}</p>
+      <p><strong>Year:</strong> {{ data.year }}</p>
+    </div>
+  </div>
+  <div class="subjects">
+    <h3>Subjects:</h3>
+    <ul>
+      <li *ngFor="let subject of data.subjects">
+        <strong>{{ subject.name }}:</strong> {{ subject.grade }}
+      </li>
+    </ul>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog($event)">Close</button>
+</mat-dialog-actions>

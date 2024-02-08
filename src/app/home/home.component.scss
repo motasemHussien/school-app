@@ -1,0 +1,27 @@
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+
+  h1,
+  h2 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .page-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .page-title {
+      margin: 0;
+    }
+  }
+
+  .edit-student-form-actions-container {
+    display: flex;
+    gap: 12px;
+  }
+}
