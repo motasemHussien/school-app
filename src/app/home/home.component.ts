@@ -165,9 +165,6 @@ export class HomeComponent {
   }
 
   fetchStudents(): void {
-    // Perform HTTP request to fetch students based on selected filters
-    // Update dataSource with fetched data
-
     this.dataSource = this.allStudents.filter((student) => {
       return (
         student.class === this.selectedClass &&
@@ -177,7 +174,6 @@ export class HomeComponent {
   }
 
   editStudent(student: Student): void {
-    // Copy the student object to the newStudent property for editing
     this.newStudent = { ...student };
     this.showEditStudentForm = true; // Show the edit form
   }
@@ -192,7 +188,6 @@ export class HomeComponent {
       (student) => student.id === this.newStudent.id
     );
     if (index !== -1) {
-      // Update the corresponding student object in the allStudents array
       this.allStudents[index] = { ...this.newStudent };
       this.fetchStudents(); // Update the dataSource array
       this.showEditStudentForm = false; // Hide the edit form
@@ -238,11 +233,9 @@ export class HomeComponent {
     // Hide the form after adding the student
 
     this.showAddStudentForm = false;
-    console.log('new student: ', this.newStudent);
   }
   viewStudentDetails(student: Student): void {
     // Implement logic to view student details
-    console.log('Viewing student details:', student);
 
     this.openStudentDetailsDialog(student);
   }
